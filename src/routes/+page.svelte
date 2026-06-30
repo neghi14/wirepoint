@@ -213,7 +213,7 @@
             >
                 <div class="grid gap-8 max-w-140">
                     <h1
-                        class="grid overflow-hidden font-display text-[2.3rem] font-bold leading-11 sm:text-[3.2rem] sm:leading-[3.8rem]"
+                        class="grid overflow-hidden font-display text-[2.2rem] font-bold leading-11 sm:text-[3.2rem] sm:leading-[3.8rem]"
                         aria-label="Turn your USD cash and cheques into Naira instantly."
                     >
                         <span class="overflow-hidden">
