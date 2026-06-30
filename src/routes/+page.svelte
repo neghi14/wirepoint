@@ -24,6 +24,7 @@
     let smoothWrapper: HTMLDivElement;
     let smoothContent: HTMLDivElement;
     let heroSection: HTMLElement;
+    let heroImage: HTMLImageElement;
     let testimonialTrack: HTMLDivElement;
     let smootherInstance:
         | {
@@ -57,6 +58,22 @@
                 ]);
 
             gsap.registerPlugin(ScrollTrigger, ScrollSmoother);
+
+            gsap.from("[data-hero-line]", {
+                yPercent: 110,
+                duration: 0.9,
+                ease: "power3.out",
+                stagger: 0.12,
+                delay: 0.15,
+            });
+
+            gsap.from(heroImage, {
+                autoAlpha: 0,
+                y: 24,
+                duration: 1,
+                ease: "power2.out",
+                delay: 0.45,
+            });
 
             smootherInstance = ScrollSmoother.create({
                 wrapper: smoothWrapper,
@@ -169,11 +186,11 @@
 
 <header class="fixed inset-x-0 top-0 z-50 bg-white">
     <div class="container flex h-20 items-center justify-between">
-        <img src={wirepointLogo} alt="Wirepoint" class="h-[29px] w-auto" />
+        <img src={wirepointLogo} alt="Wirepoint" class="h-6 w-auto sm:h-[29px]" />
 
         <button
             type="button"
-            class="rounded-lg bg-primary px-7 py-3 text-base font-semibold text-white transition-transform hover:scale-[1.02] active:scale-[0.98]"
+            class="rounded-lg bg-primary px-7 py-3 text-base font-semibold text-white transition-transform duration-200 hover:-translate-y-1 hover:scale-[1.02] active:translate-y-0 active:scale-[0.98]"
             onclick={scrollToHero}
         >
             Get the app
@@ -192,11 +209,26 @@
             >
                 <div class="grid gap-8 max-w-140">
                     <h1
-                        class="font-display font-bold text-[3.2rem] leading-[3.8rem]"
+                        class="grid overflow-hidden font-display text-4xl font-bold leading-11 sm:text-[3.2rem] sm:leading-[3.8rem]"
+                        aria-label="Turn your USD cash and cheques into Naira instantly."
                     >
-                        Turn your USD cash and cheques into Naira instantly.
+                        <span class="overflow-hidden">
+                            <span data-hero-line class="block"
+                                >Turn your USD cash</span
+                            >
+                        </span>
+                        <span class="overflow-hidden">
+                            <span data-hero-line class="block"
+                                >and cheques into</span
+                            >
+                        </span>
+                        <span class="overflow-hidden">
+                            <span data-hero-line class="block"
+                                >Naira instantly.</span
+                            >
+                        </span>
                     </h1>
-                    <p class="font-sans font-normal text-lg text-[#50555C]">
+                    <p class="font-sans text-base font-normal leading-7 text-[#50555C] sm:text-lg">
                         Got USD cash or dollar cheques? Convert them to Naira
                         seamlessly with Wirepoint. Enjoy secure processing,
                         competitive exchange rates, fast payouts, and a
@@ -209,6 +241,7 @@
                             target="_blank"
                             rel="noreferrer"
                             aria-label="Get it on Google Play"
+                            class="transition-transform duration-200 hover:-translate-y-1"
                         >
                             <img
                                 src={playStore}
@@ -221,6 +254,7 @@
                             target="_blank"
                             rel="noreferrer"
                             aria-label="Download on the App Store"
+                            class="transition-transform duration-200 hover:-translate-y-1"
                         >
                             <img
                                 src={appStore}
@@ -234,6 +268,7 @@
                     class="flex justify-center lg:justify-end -mb-12 sm:-mb-16 lg:-mb-20"
                 >
                     <img
+                        bind:this={heroImage}
                         src={handHoldingPhone}
                         alt="Hand holding a phone with the Wirepoint app"
                         class="w-full max-w-md lg:max-w-lg"
@@ -247,11 +282,11 @@
             >
                 <div class="grid gap-4 max-w-140">
                     <h2
-                        class="font-display font-bold text-4xl leading-12.5 text-white"
+                        class="font-display text-3xl font-bold leading-10 text-white sm:text-4xl sm:leading-12.5"
                     >
                         The Smarter Way to Process USD Cash and Cheques.
                     </h2>
-                    <p class="text-lg font-normal text-white">
+                    <p class="text-base font-normal leading-7 text-white sm:text-lg">
                         Convert your USD cheques and physical USD cash into
                         Naira with Wirepoint. Enjoy secure processing,
                         competitive rates, transparent transactions, and fast,
@@ -269,7 +304,7 @@
                                 class="mx-auto h-28 w-28 object-contain"
                             />
                             <h3
-                                class="font-sans text-lg font-medium text-black"
+                                class="font-sans text-base font-medium text-black sm:text-lg"
                             >
                                 {card.title}
                             </h3>
@@ -289,11 +324,11 @@
                 >
                     <div class="relative z-10 grid max-w-sm gap-6">
                         <h2
-                            class="font-display text-4xl font-bold leading-12 text-black"
+                            class="font-display text-3xl font-bold leading-10 text-black sm:text-4xl sm:leading-12"
                         >
                             Turn your Physical USD cash to Naira
                         </h2>
-                        <p class="text-lg leading-7 text-[#676C74]">
+                        <p class="text-base leading-7 text-[#676C74] sm:text-lg">
                             Mail physical cash securely to WirePoint and receive
                             the Naira equivalent once we verify your deposit.
                         </p>
@@ -326,11 +361,11 @@
                     </div>
                     <div class="grid max-w-md gap-6 pt-10 lg:pt-0">
                         <h2
-                            class="font-display text-4xl font-bold leading-12 text-black lg:text-[2.75rem] lg:leading-[3.25rem]"
+                            class="font-display text-3xl font-bold leading-10 text-black sm:text-4xl sm:leading-12 lg:text-[2.75rem] lg:leading-[3.25rem]"
                         >
                             Convert Your USD Cheque to Naira
                         </h2>
-                        <p class="text-lg leading-7 text-[#676C74]">
+                        <p class="text-base leading-7 text-[#676C74] sm:text-lg">
                             Mail a US cheque to WirePoint, snap a photo in the
                             app, and track it all the way to a Naira payout.
                         </p>
@@ -349,11 +384,11 @@
                 >
                     <div class="grid max-w-md gap-6 py-6 lg:py-0 lg:pl-6">
                         <h2
-                            class="font-display text-4xl font-bold leading-12 text-white lg:text-[2.75rem] lg:leading-[3.25rem]"
+                            class="font-display text-3xl font-bold leading-10 text-white sm:text-4xl sm:leading-12 lg:text-[2.75rem] lg:leading-[3.25rem]"
                         >
                             Track your transactions
                         </h2>
-                        <p class="text-lg leading-7 text-white/80">
+                        <p class="text-base leading-7 text-white/80 sm:text-lg">
                             Follow your transaction with confidence. Wirepoint
                             keeps you informed from submission to successful
                             Naira payout.
@@ -381,11 +416,11 @@
                     class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(22rem,28rem)] lg:items-start"
                 >
                     <h2
-                        class="font-display text-4xl font-bold leading-12 text-black lg:text-[2.75rem] lg:leading-[3.25rem]"
+                        class="font-display text-3xl font-bold leading-10 text-black sm:text-4xl sm:leading-12 lg:text-[2.75rem] lg:leading-[3.25rem]"
                     >
                         Powering Secure USD Transactions
                     </h2>
-                    <p class="text-lg leading-7 text-[#676C74]">
+                    <p class="text-base leading-7 text-[#676C74] sm:text-lg">
                         Wirepoint delivers secure, transparent, and reliable USD
                         cheque and cash processing, ensuring fast Naira payouts
                         with confidence and convenience.
@@ -408,14 +443,14 @@
                             class="relative min-h-[15rem] overflow-hidden rounded-lg bg-gray-03 p-6 sm:p-8"
                         >
                             <h3
-                                class="font-display text-2xl font-bold leading-8 text-black"
+                                class="font-display text-xl font-bold leading-7 text-black sm:text-2xl sm:leading-8"
                             >
                                 Trade Crypto with
                                 <span class="block text-[#707783]"
                                     >Wirepoint</span
                                 >
                             </h3>
-                            <p class="mt-8 text-lg leading-7 text-[#676C74]">
+                            <p class="mt-8 text-base leading-7 text-[#676C74] sm:text-lg">
                                 Make every crypto transaction count. Convert to
                                 Naira through Wirepoint with speed.
                             </p>
@@ -449,7 +484,7 @@
                             class="absolute inset-0 bg-gradient-to-b from-black/0 via-black/10 to-black/70"
                         ></div>
                         <p
-                            class="absolute right-8 bottom-8 left-8 text-lg leading-6 text-white"
+                            class="absolute right-8 bottom-8 left-8 text-base leading-6 text-white sm:text-lg"
                         >
                             Every transaction is backed by security,
                             transparency, and trusted service.
@@ -464,11 +499,11 @@
             >
                 <div class="grid gap-8">
                     <h2
-                        class="font-display text-4xl font-bold leading-12 lg:text-[2.75rem] lg:leading-[3.25rem]"
+                        class="font-display text-3xl font-bold leading-10 sm:text-4xl sm:leading-12 lg:text-[2.75rem] lg:leading-[3.25rem]"
                     >
                         Frequently Asked Questions
                     </h2>
-                    <p class="max-w-md text-lg leading-8 text-white/90">
+                    <p class="max-w-md text-base leading-7 text-white/90 sm:text-lg sm:leading-8">
                         Got USD cash or dollar cheques? Convert them to Naira
                         seamlessly with Wirepoint. Enjoy secure processing,
                         competitive exchange
@@ -479,6 +514,7 @@
                             target="_blank"
                             rel="noreferrer"
                             aria-label="Get it on Google Play"
+                            class="transition-transform duration-200 hover:-translate-y-1"
                         >
                             <img
                                 src={playStore}
@@ -491,6 +527,7 @@
                             target="_blank"
                             rel="noreferrer"
                             aria-label="Download on the App Store"
+                            class="transition-transform duration-200 hover:-translate-y-1"
                         >
                             <img
                                 src={appStore}
@@ -509,10 +546,14 @@
                         >
                             <Accordion.Header level={3}>
                                 <Accordion.Trigger
-                                    class="flex w-full items-center justify-between gap-6 py-5 text-left text-lg leading-7 text-white"
+                                    class="group flex w-full items-center justify-between gap-6 py-5 text-left text-base leading-7 text-white sm:text-lg"
                                 >
                                     <span>{faq.question}</span>
-                                    <span class="text-2xl leading-none">⌄</span>
+                                    <span
+                                        class="text-2xl leading-none transition-transform duration-200 group-data-[state=open]:rotate-180"
+                                    >
+                                        ⌄
+                                    </span>
                                 </Accordion.Trigger>
                             </Accordion.Header>
                             <Accordion.Content
@@ -530,11 +571,11 @@
             <div class="container">
                 <div class="grid max-w-4xl gap-6">
                     <h2
-                        class="font-display text-4xl font-bold leading-12 text-black lg:text-[2.75rem] lg:leading-[3.25rem]"
+                        class="font-display text-3xl font-bold leading-10 text-black sm:text-4xl sm:leading-12 lg:text-[2.75rem] lg:leading-[3.25rem]"
                     >
                         Why Customer Use Wirepoint
                     </h2>
-                    <p class="max-w-3xl text-lg leading-7 text-[#7A818C]">
+                    <p class="max-w-3xl text-base leading-7 text-[#7A818C] sm:text-lg">
                         Hear from customers who trust Wirepoint for fast,
                         secure, and reliable transactions. Whether cashing USD
                         cheques, converting physical USD cash, or exchanging
@@ -554,11 +595,11 @@
                             aria-hidden={index >= testimonials.length}
                             class="grid min-h-[20rem] w-[min(26rem,85vw)] shrink-0 content-between rounded-lg bg-white p-6 sm:p-8"
                         >
-                            <p class="text-lg leading-6 text-[#1A1A1A]">
+                            <p class="text-base leading-6 text-[#1A1A1A] sm:text-lg">
                                 {testimonial.quote}
                             </p>
                             <div class="grid gap-1">
-                                <h3 class="text-lg font-bold text-black">
+                                <h3 class="text-base font-bold text-black sm:text-lg">
                                     {testimonial.name}
                                 </h3>
                                 <p class="text-base text-[#1A1A1A]">
@@ -581,7 +622,7 @@
                     <img
                         src={wirepointLogoLight}
                         alt="Wirepoint"
-                        class="h-[29px] w-auto"
+                        class="h-6 w-auto sm:h-[29px]"
                     />
                     <p class="max-w-md text-lg leading-8 text-white/50">
                         Receive money from the US via wire, cheque, or cash
@@ -601,28 +642,28 @@
                     <div class="flex items-center gap-3">
                         <button
                             type="button"
-                            class="grid size-8 place-items-center rounded-full bg-white text-dark"
+                            class="grid size-8 place-items-center rounded-full bg-white text-dark transition-transform duration-200 hover:-translate-y-1"
                             aria-label="Wirepoint on X"
                         >
                             <IconBrandX size={18} stroke={2.5} />
                         </button>
                         <button
                             type="button"
-                            class="grid size-8 place-items-center rounded-full bg-white text-dark"
+                            class="grid size-8 place-items-center rounded-full bg-white text-dark transition-transform duration-200 hover:-translate-y-1"
                             aria-label="Wirepoint on Facebook"
                         >
                             <IconBrandFacebookFilled size={18} />
                         </button>
                         <button
                             type="button"
-                            class="grid size-8 place-items-center rounded-full bg-white text-dark"
+                            class="grid size-8 place-items-center rounded-full bg-white text-dark transition-transform duration-200 hover:-translate-y-1"
                             aria-label="Wirepoint on Instagram"
                         >
                             <IconBrandInstagram size={18} stroke={2.5} />
                         </button>
                         <button
                             type="button"
-                            class="grid size-8 place-items-center rounded-full bg-white text-dark"
+                            class="grid size-8 place-items-center rounded-full bg-white text-dark transition-transform duration-200 hover:-translate-y-1"
                             aria-label="Wirepoint on TikTok"
                         >
                             <IconBrandTiktok size={18} stroke={2.5} />
