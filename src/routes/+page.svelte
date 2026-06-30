@@ -186,11 +186,15 @@
 
 <header class="fixed inset-x-0 top-0 z-50 bg-white">
     <div class="container flex h-20 items-center justify-between">
-        <img src={wirepointLogo} alt="Wirepoint" class="h-6 w-auto sm:h-[29px]" />
+        <img
+            src={wirepointLogo}
+            alt="Wirepoint"
+            class="h-6 w-auto sm:h-[29px]"
+        />
 
         <button
             type="button"
-            class="rounded-lg bg-primary px-7 py-3 text-base font-semibold text-white transition-transform duration-200 hover:-translate-y-1 hover:scale-[1.02] active:translate-y-0 active:scale-[0.98]"
+            class="rounded-lg bg-primary px-5 py-2 lg:px-7 lg:py-3 text-base font-semibold text-white transition-transform duration-200 hover:-translate-y-1 hover:scale-[1.02] active:translate-y-0 active:scale-[0.98]"
             onclick={scrollToHero}
         >
             Get the app
@@ -209,7 +213,7 @@
             >
                 <div class="grid gap-8 max-w-140">
                     <h1
-                        class="grid overflow-hidden font-display text-4xl font-bold leading-11 sm:text-[3.2rem] sm:leading-[3.8rem]"
+                        class="grid overflow-hidden font-display text-[2.3rem] font-bold leading-11 sm:text-[3.2rem] sm:leading-[3.8rem]"
                         aria-label="Turn your USD cash and cheques into Naira instantly."
                     >
                         <span class="overflow-hidden">
@@ -228,7 +232,9 @@
                             >
                         </span>
                     </h1>
-                    <p class="font-sans text-base font-normal leading-7 text-[#50555C] sm:text-lg">
+                    <p
+                        class="font-sans text-base font-normal leading-7 text-[#50555C] sm:text-lg"
+                    >
                         Got USD cash or dollar cheques? Convert them to Naira
                         seamlessly with Wirepoint. Enjoy secure processing,
                         competitive exchange rates, fast payouts, and a
@@ -286,7 +292,9 @@
                     >
                         The Smarter Way to Process USD Cash and Cheques.
                     </h2>
-                    <p class="text-base font-normal leading-7 text-white sm:text-lg">
+                    <p
+                        class="text-base font-normal leading-7 text-white sm:text-lg"
+                    >
                         Convert your USD cheques and physical USD cash into
                         Naira with Wirepoint. Enjoy secure processing,
                         competitive rates, transparent transactions, and fast,
@@ -320,7 +328,7 @@
             <div class="container">
                 <div
                     data-pin-card
-                    class="relative overflow-hidden rounded-3xl bg-gray-03 px-6 py-12 sm:px-10 sm:py-16 lg:px-20 lg:py-32"
+                    class="relative min-h-[32rem] overflow-hidden rounded-3xl bg-gray-03 px-6 py-12 sm:px-10 sm:py-16 lg:px-20 lg:py-32"
                 >
                     <div class="relative z-10 grid max-w-sm gap-6">
                         <h2
@@ -328,7 +336,9 @@
                         >
                             Turn your Physical USD cash to Naira
                         </h2>
-                        <p class="text-base leading-7 text-[#676C74] sm:text-lg">
+                        <p
+                            class="text-base leading-7 text-[#676C74] sm:text-lg"
+                        >
                             Mail physical cash securely to WirePoint and receive
                             the Naira equivalent once we verify your deposit.
                         </p>
@@ -365,7 +375,9 @@
                         >
                             Convert Your USD Cheque to Naira
                         </h2>
-                        <p class="text-base leading-7 text-[#676C74] sm:text-lg">
+                        <p
+                            class="text-base leading-7 text-[#676C74] sm:text-lg"
+                        >
                             Mail a US cheque to WirePoint, snap a photo in the
                             app, and track it all the way to a Naira payout.
                         </p>
@@ -450,7 +462,9 @@
                                     >Wirepoint</span
                                 >
                             </h3>
-                            <p class="mt-8 text-base leading-7 text-[#676C74] sm:text-lg">
+                            <p
+                                class="mt-8 text-base leading-7 text-[#676C74] sm:text-lg"
+                            >
                                 Make every crypto transaction count. Convert to
                                 Naira through Wirepoint with speed.
                             </p>
@@ -503,7 +517,9 @@
                     >
                         Frequently Asked Questions
                     </h2>
-                    <p class="max-w-md text-base leading-7 text-white/90 sm:text-lg sm:leading-8">
+                    <p
+                        class="max-w-md text-base leading-7 text-white/90 sm:text-lg sm:leading-8"
+                    >
                         Got USD cash or dollar cheques? Convert them to Naira
                         seamlessly with Wirepoint. Enjoy secure processing,
                         competitive exchange
@@ -575,7 +591,9 @@
                     >
                         Why Customer Use Wirepoint
                     </h2>
-                    <p class="max-w-3xl text-base leading-7 text-[#7A818C] sm:text-lg">
+                    <p
+                        class="max-w-3xl text-base leading-7 text-[#7A818C] sm:text-lg"
+                    >
                         Hear from customers who trust Wirepoint for fast,
                         secure, and reliable transactions. Whether cashing USD
                         cheques, converting physical USD cash, or exchanging
@@ -595,11 +613,15 @@
                             aria-hidden={index >= testimonials.length}
                             class="grid min-h-[20rem] w-[min(26rem,85vw)] shrink-0 content-between rounded-lg bg-white p-6 sm:p-8"
                         >
-                            <p class="text-base leading-6 text-[#1A1A1A] sm:text-lg">
+                            <p
+                                class="text-base leading-6 text-[#1A1A1A] sm:text-lg"
+                            >
                                 {testimonial.quote}
                             </p>
                             <div class="grid gap-1">
-                                <h3 class="text-base font-bold text-black sm:text-lg">
+                                <h3
+                                    class="text-base font-bold text-black sm:text-lg"
+                                >
                                     {testimonial.name}
                                 </h3>
                                 <p class="text-base text-[#1A1A1A]">
