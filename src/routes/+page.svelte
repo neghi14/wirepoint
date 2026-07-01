@@ -256,7 +256,7 @@
                             />
                         </a>
                         <a
-                            href="https://google.com"
+                            href="https://apps.apple.com/app/wirepoint/id6782949706"
                             target="_blank"
                             rel="noreferrer"
                             aria-label="Download on the App Store"
@@ -539,7 +539,7 @@
                             />
                         </a>
                         <a
-                            href="https://google.com"
+                            href="https://apps.apple.com/app/wirepoint/id6782949706"
                             target="_blank"
                             rel="noreferrer"
                             aria-label="Download on the App Store"
