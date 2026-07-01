@@ -277,7 +277,7 @@
                         bind:this={heroImage}
                         src={handHoldingPhone}
                         alt="Hand holding a phone with the Wirepoint app"
-                        class="w-full max-w-md lg:max-w-lg"
+                        class="w-full max-w-md lg:max-w-lg relative max-sm:left-15 max-lg:left-25"
                     />
                 </div>
             </div>
