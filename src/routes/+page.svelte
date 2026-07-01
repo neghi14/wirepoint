@@ -243,7 +243,7 @@
                     </p>
                     <div class="flex flex-wrap items-center gap-3">
                         <a
-                            href="https://google.com"
+                            href="https://play.google.com/store/apps/details?id=com.wirepoint.app"
                             target="_blank"
                             rel="noreferrer"
                             aria-label="Get it on Google Play"
@@ -526,7 +526,7 @@
                     </p>
                     <div class="flex flex-wrap items-center gap-4">
                         <a
-                            href="https://google.com"
+                            href="https://play.google.com/store/apps/details?id=com.wirepoint.app"
                             target="_blank"
                             rel="noreferrer"
                             aria-label="Get it on Google Play"
